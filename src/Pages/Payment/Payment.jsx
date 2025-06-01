@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { Type } from "../../Utility/action.type";
 
 function Payment() {
-  const [{ user, basket }] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   console.log(user);
 
   const totalItem = basket?.reduce((amount, item) => {
@@ -28,7 +28,9 @@ const [cardError, setCardError] = useState(null);
 const [processing, setProcessing] = useState(false)
   const stripe = useStripe();
   const elements = useElements();
-  const navigate = useElements();
+  const navigate = useNavigate();
+
+  
 
   const handleChange = (e)=>{
 // console.log(e);
@@ -72,7 +74,7 @@ try{
   });
 
 // empty the basket
-dispatchEvent({type:Type.EMPTY_BASKET});
+dispatch({type:Type.EMPTY_BASKET});
 
 
   setProcessing(false);
