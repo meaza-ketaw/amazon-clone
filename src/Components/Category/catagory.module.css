@@ -1,0 +1,53 @@
+.catagory {
+    width: 100%;
+    max-width: 350px;
+    height: 350px; /* Fixed height for uniform cards */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spread out content */
+    align-items: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.catagory img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 250px;
+    padding: 0px 10px;
+    height: auto;
+}
+
+.catagory a {
+    text-decoration: none;
+    color: rgb (35,35,35);
+}
+
+.catagory h2,
+.catagory p {
+padding: 5px;
+margin-left: 15px;
+}
+
+.catagory p {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(9,132,209);
+}
+.catagory__container {
+    position: relative;
+    margin-top: -10%;
+    display: grid;
+    place-items: center;
+    /* grid-template-columns: repeat(4, 1fr);  */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1600px;
+    gap: 1rem; 
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
